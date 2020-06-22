@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Susy's Cookies</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="container">
+	  <header id="navbar">
+	  	<a href="#" class="logo">Susy's<span>Cookies</span></a>
+	  	<ul>
+  		<li><a href="#" class="active">Home</a>
+  		<li><a href="#">Menu</a></li>
+  		<li><a href="#">About</a></li>
+  		<li><a href="#">Contact</a></li>
+	  	</ul>
+	  <span class="menuIcon" onclick="menuToggle();"></span>
+	  </header>
+	  <div class="content">
+		<div class="bannerText" id="slideshowText">
+	 	  <div class="active">
+	  		<h2>Choco-Brownie<br>
+	  		Nuevas Galletas</h2>
+	  		<p>Hoy les presentamos la delicia de nuestra clientela. la mejor alternativa de nuestra franquicia, hechas con brownie y lluvia de chocolates con un crujiente sabor por fuera y al mismo tiempo tiernas por dentro.</p>
+		<a href="#">Read More</a>
+	  </div>
+   		<div>
+	  		<h2>Choco-Choco<br>
+	  		Nuevas Galletas</h2>
+	  		<p>Es una galleta de chocolate con un buen sabor tradicional que le encantara a las personas, ya que esta acompañada con chispas de coco dandole asi una buena combinacion para todos los gustos.</p>
+		<a href="#">Read More</a>
+   </div>
+   <div>
+   <h2>Choco-vainilla<br>
+	  		Nuevas Galletas</h2>
+	  		<p>Es una galleta hecha para impresionar a los chicos y chicas que son amantes de las novedades del sabor, para sastifacer sus espectativas, te va a encantar.</p>
+		<a href="#">Read More</a>
+   	</div>
+   </div>
+   <div class="bannerImg" id="slideshow">
+	 <img src="img1.png" class="active"> 
+	 <img src="img2.png">
+	 <img src="img3.png">
+	</div>
+  </div>
+  <div class="icons">
+  	<ul class="sci">
+  	  <li><a herf="#"><img src="facebook.png"></a></li>
+  	  <li><a herf="#"><img src="instagram.png"></a></li>
+  	  <li><a herf="#"><img src="whatsapp.png"></a></li>
+  	</ul>
+  	<ul class="controls">
+  		<li><a><img src="left.png" onclick="prevSlide();prevSlideText()"></a></li>
+  		<li><a><img src="right.png" onclick="nextSlide();nextSlideText()"></a></li>
+  	</ul>
+  </div>
+</div>
+<script type="text/javascript">
+  var slideshow = document.getElementById('slideshow');
+  var slides = slideshow.getElementsByTagName('img');
+  var index = 0;
+
+	 function nextSlide(){ 
+	 slides[index].classList.remove('active');
+	 index = (index + 1) % slides.length;
+	 slides[index].classList.add('active');
+	}
+	 function prevSlide(){
+	 slides[index].classList.remove('active');
+	 index = (index - 1 + slides.length) % slides.length;
+	 slides[index].classList.add('active');
+	}
+
+	
+	var slideshowText = document.getElementById('slideshowText');
+	var slidesText = slideshowText.getElementsByTagName('div');
+	var i = 0;
+
+	 function nextSlideText(){
+	 slidesText[i].classList.remove('active');
+	 i = (i + 1) % slidesText.length;
+	 slidesText[i].classList.add('active');
+	}
+	 function prevSlideText(){
+	 slidesText[i].classList.remove('active');
+	 i = (i - 1 + slidesText.length) % slidesText.length;
+	 slidesText[i].classList.add('active');
+	}
+	function menuToggle(){
+		var nav = document.getElementById('navbar')
+		nav.classList.toggle('active')
+	}
+	</script>
+</body>
+</html>
